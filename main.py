@@ -7,7 +7,6 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 app = Flask(__name__)
 # run start up scripts to load the model
 
-# nlp = spacy.load('./model/basic')
 nlp = spacy.load('en_core_web_sm')
 nlp.add_pipe("spacytextblob")
 

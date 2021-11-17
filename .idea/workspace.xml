@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1072d290-ca6d-4399-82fc-2adb107ee0cf" name="Default Changelist" comment="" />
+    <list default="true" id="1072d290-ca6d-4399-82fc-2adb107ee0cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dream.py" beforeDir="false" afterPath="$PROJECT_DIR$/dream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <list id="ce3662f1-48e0-41af-a8c5-85426e9475d0" name="Revert &quot;Update README.md&quot;" comment="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f83514fe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635852737818</updated>
       <workItem from="1635852749426" duration="29619000" />
-      <workItem from="1636500643867" duration="3802000" />
+      <workItem from="1636500643867" duration="7806000" />
+      <workItem from="1636590125732" duration="781000" />
     </task>
     <servers />
   </component>
@@ -97,5 +102,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f83514fe" />
     <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f83514fe" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2470" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1636590136097">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2470" y="369" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1636590136097" />
   </component>
 </project>

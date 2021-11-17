@@ -23,7 +23,7 @@ Python (with JSON)
 import requests
 import json
 
-url = "https://cs361-somerfis-serve.uw.r.appspot.com/pos"
+url = "https://cs361-parsely-rjg4g6kr7q-uw.a.run.app/pos"
 payload = { "text": "if a parsley farmer is sued, can they garnish her wages?" }
 
 response = requests.post(url, data=json.dumps(payload) 
@@ -31,7 +31,7 @@ response = requests.post(url, data=json.dumps(payload)
 
 Python (with plain text)
 ```
-url = "https://cs361-somerfis-serve.uw.r.appspot.com/pos"
+url = "https://cs361-parsely-rjg4g6kr7q-uw.a.run.app/pos"
 text = "if a parsley farmer is sued, can they garnish her wages?"
 
 r = requests.post(url, data=text)

@@ -17,6 +17,7 @@ class Dream:
         self.setting_matcher = Matcher(vocab=nlp.vocab)
         self.setting_submatcher = Matcher(vocab=nlp.vocab)
         self.ego = []
+        self.ego_sentiment = []
         self.settings = []
         self.sub_settings = []
         self.symbols = []
@@ -80,7 +81,6 @@ class Dream:
         for token in self.doc:
             if (token._.polarity != 0 or token._.subjectivity != 0):
                 self.sentiment.append((token.text, token._.polarity, token._.subjectivity))
-
 
 
 def remove_empty_attributes(obj):
