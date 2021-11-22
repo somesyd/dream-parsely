@@ -61,16 +61,32 @@ class Dream:
                 self.symbols.append(span.text)
 
     def parse_characters(self):
+        persons_dict = {}
+        animal_dict = {}
         for chunk in self.doc.noun_chunks:
             for token in chunk:
                 if token.check_flag(self.IS_PERSON):
-                    self.characters.append(chunk.text)
+                    # get the longest span of text for the person
+                    if token.text not in persons_dict:
+                        persons_dict[token.text] = chunk.text
+                    else:
+                        if len(chunk.text) > len(persons_dict[token.text]):
+                            persons_dict[token.text] = chunk.text
+                    # self.characters.append(chunk.text)
                 if token.check_flag(self.IS_ANIMAL):
-                    self.animals.append(chunk.text)
+                    # get the longest span of text for the animal
+                    if token.text not in animal_dict:
+                        animal_dict[token.text] = chunk.text
+                    else:
+                        if len(chunk.text) > len(animal_dict[token.text]):
+                            animal_dict[token.text] = chunk.text
+        # add the longest spans to their respective lists
+        character_set = set(persons_dict.values())
+        self.animals = list(animal_dict.values())
         list_of_spans = self.character_matcher(self.doc, as_spans=True)
         for span in list_of_spans:
-            if span.text not in self.characters:
-                self.characters.append(span.text)
+            character_set.add(span.text)
+        self.characters = list(character_set)
 
     def parse_setting(self):
         list_of_spans = self.setting_matcher(self.doc, as_spans=True)

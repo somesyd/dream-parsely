@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1072d290-ca6d-4399-82fc-2adb107ee0cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/configure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people_words.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dream.py" beforeDir="false" afterPath="$PROJECT_DIR$/dream.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <list id="ce3662f1-48e0-41af-a8c5-85426e9475d0" name="Revert &quot;Update README.md&quot;" comment="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f83514fe" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +81,8 @@
       <workItem from="1636500643867" duration="7806000" />
       <workItem from="1636590125732" duration="781000" />
       <workItem from="1637192285905" duration="272000" />
-      <workItem from="1637543891434" duration="1924000" />
+      <workItem from="1637543891434" duration="3938000" />
+      <workItem from="1637557157475" duration="1064000" />
     </task>
     <servers />
   </component>
