@@ -7,10 +7,12 @@ from settings import where, mood, setting_place, setting_sub
 
 
 class Dream:
-    def __init__(self, nlp, text):
+    def __init__(self, nlp, text, IS_PERSON, IS_ANIMAL):
         self.nlp = nlp
         self.text = text
         self.doc = nlp(self.text)
+        self.IS_PERSON = IS_PERSON
+        self.IS_ANIMAL = IS_ANIMAL
         self.ego_matcher = Matcher(vocab=self.nlp.vocab)
         self.symbol_matcher = Matcher(vocab=self.nlp.vocab)
         self.character_matcher = Matcher(vocab=self.nlp.vocab)
@@ -22,6 +24,7 @@ class Dream:
         self.sub_settings = []
         self.symbols = []
         self.characters = []
+        self.animals = []
         self.sentiment = []
         self.doc_sentiment = None
         # run set-up
@@ -54,10 +57,16 @@ class Dream:
     def parse_symbols(self):
         list_of_spans = self.symbol_matcher(self.doc, as_spans=True)
         for span in list_of_spans:
-            if span.text not in self.symbols:
+            if span.text not in self.symbols and span.text not in ['man', 'woman', 'girl', 'boy']:
                 self.symbols.append(span.text)
 
     def parse_characters(self):
+        for chunk in self.doc.noun_chunks:
+            for token in chunk:
+                if token.check_flag(self.IS_PERSON):
+                    self.characters.append(chunk.text)
+                if token.check_flag(self.IS_ANIMAL):
+                    self.animals.append(chunk.text)
         list_of_spans = self.character_matcher(self.doc, as_spans=True)
         for span in list_of_spans:
             if span.text not in self.characters:
@@ -89,13 +98,15 @@ def remove_empty_attributes(obj):
             del obj[key]
     return obj
 
-def get_dream_json(nlp, data):
-    dream = Dream(nlp, data)
+def get_dream_json(nlp, data, IS_PERSON, IS_ANIMAL):
+    dream = Dream(nlp, data, IS_PERSON, IS_ANIMAL)
     obj = dream.__dict__
     # delete extraneous sections of the object
     del obj['text']
     del obj['nlp']
     del obj['doc']
+    del obj['IS_PERSON']
+    del obj['IS_ANIMAL']
     del obj['ego_matcher']
     del obj['symbol_matcher']
     del obj['character_matcher']
